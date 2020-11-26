@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/zhuce.css">
+</head>
+<body>
+<div class="zhucebg">
+    <img src="img/注册背景1.jpg" alt="">
+    <img src="img/注册背景2.jpg" alt="">
+    <img src="img/注册背景3.jpg" alt="">
+    <img src="img/注册背景4.jpg" alt="">
+</div>
+<div class="zhuce-contain">
+    <h1>注册</h1>
+    <input type="text" placeholder="用户名">
+    <img class="eyes" src="img/close.png">
+    <input id="psw" type="password" value="" placeholder="密码">
+    <div class="enter"><span></span>请输入6-15位密码</div>
+    <input id="checkpsw" type="password" placeholder="确认密码">
+    <div class="check"><span></span>请输入相同密码</div>
+    <input type="text" placeholder="电话号码">
+    <button class="send" >发送验证码</button>
+    <input type="text" placeholder="邮箱">
+    <button class="finish">注 册</button>
+</div>
+<script>
+    var zhucebg = document.querySelector('.zhucebg');
+    var imgs = zhucebg.querySelectorAll('img');
+    var psw=document.querySelector('#psw');
+    var enter=document.querySelector('.enter');
+    var check=document.querySelector('.check');
+    var checkpsw=document.querySelector('#checkpsw');
+    var eyes=document.querySelector('.eyes');
+    var temp=1;
+    var send=document.querySelector('.send');
+    var time=60;
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onclick = function() {
+            document.body.style.backgroundImage = ('url("' + this.src + '")');
+        }
+    }
+    // 密码判定
+    psw.onblur=function () {
+       if(psw.value.length < 6 || psw.value.length > 15){
+           console.log(psw.value);
+           enter.innerHTML="<span></span>请输入正确位数的密码"
+           var span1=enter.querySelector('span');
+           span1.style.backgroundPosition='-60px 0px';
+       }else if(psw.value.length<=0){
+          enter.innerHTML="<span></span>请输入6-15位密码"
+          var span1=enter.querySelector('span');
+          span1.style.backgroundPosition='0px 0px';
+        }else{
+           enter.innerHTML="<span></span>输入的密码符合要求"
+           var span1=enter.querySelector('span');
+           span1.style.backgroundPosition='-30px 0px';
+       }
+    }
+    //眼睛显示
+    eyes.onclick=function () {
+        if(temp===1){
+            temp=0;
+            eyes.src="img/open.png";
+            checkpsw.type="text";
+            psw.type="text";
+        }else{
+            temp=1;
+            eyes.src="img/close.png";
+            psw.type="password";
+            checkpsw.type="password";
+        }
+    }
+    //相同密码显示
+    checkpsw.onblur=function () {
+        console.log(psw.value)
+        console.log(checkpsw.value)
+        if (psw.value===checkpsw.value){
+            check.innerHTML="<span></span>密码相同"
+            var span2=check.querySelector('span');
+            span2.style.backgroundPosition='-30px 0px';
+        }else if(checkpsw.value.length===0){
+            check.innerHTML="<span></span>请输入相同密码"
+            var span1=enter.querySelector('span');
+            span1.style.backgroundPosition='0px 0px';
+        }else{
+            check.innerHTML="<span></span>密码不相同"
+            var span2=check.querySelector('span');
+            span2.style.backgroundPosition='-60px 0px';
+        }
+    }
+    //验证码发送
+    send.onclick=function(){
+        send.disabled=true;
+       var e= setInterval(function () {
+           if(time===0){
+               clearInterval(e);
+               send.innerHTML='发送验证码';
+               send.disabled=false;
+               time=60;
+           }else{
+               send.innerHTML='还剩下'+time+'秒';
+               time--;
+           }
+        },1000);
+
+    }
+
+</script>
+</body>
+</html>

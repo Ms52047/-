@@ -1,0 +1,127 @@
+body {
+    background-size: cover;
+    background-image: url("../img/注册背景1.jpg");
+}
+.zhucebg{
+    display: flex;
+    width: 160px;
+    height: 40px;
+
+}
+.zhucebg img{
+    border-radius: 50%;
+    width: 40px;
+}
+.zhuce-contain{
+    position: relative;
+    width: 500px;
+    height: 600px;
+    background-color: rgba(0,0,0,.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.zhuce-contain h1{
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+input{
+    position: relative;
+    margin-bottom: 30px;
+    width: 400px;
+    height: 50px;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 20px;
+    color: #f7f7f7;
+    text-indent: 2em;
+    background-color: rgba(0,0,0,.4);
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+    border-bottom:2px solid #2aabd2;
+}
+.zhuce-contain input:nth-child(4){
+    margin-bottom: 6px;
+}
+.zhuce-contain input:nth-child(6){
+    margin-bottom: 6px;
+}
+.zhuce-contain input:nth-child(8){
+    margin-bottom: 6px;
+}
+.zhuce-contain div{
+    color: #f7f7f7;
+    padding-left: 88px;
+}
+.eyes{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 56px;
+    top: 160px;
+    z-index: 10;
+}
+.zhuce-contain div span{
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 15px;
+    height: 15px;
+    background-image: url('../img/ico.png') ;
+}
+.check span{
+    background-position: 0 0;
+}
+.send{
+    display: block;
+    background-color: #57d5fd;
+    border-radius: 2px;
+    color: #ffffff;
+    margin-left: 88px;
+    border: 0;
+    margin-bottom: 4px;
+    outline: none;
+}
+.finish {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    border-radius: 9px;
+    background-color: #57d5fd;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.finish:after {
+    content: "";
+    background: #45a3ef;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.finish:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}

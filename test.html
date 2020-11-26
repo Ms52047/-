@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="css/js1.js"></script>
+    <script src="css/样式动画.js"></script>
+    <style>
+        .lunbo{
+            width: 640px;
+            height: 360px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%,0);
+            overflow: hidden;
+        }
+        .lunbo .coin{
+            display: none;
+            position: absolute;
+            background-color: rgba(0,0,0,.5);
+            text-align: center;
+            line-height: 26px;
+            color: #FFFFFF;
+            font-size: 20px;
+            border-radius: 10px;
+            width: 26px;
+            height: 26px;
+            z-index: 10;
+        }
+        .coin-l{
+            top: 167px;
+        }
+        .coin-r{
+            right: 0;
+            top: 167px;
+        }
+        .lunbo ul{
+            position: absolute;
+            margin: 0;
+            width: 1000%;
+        }
+        .lunbo ul li{
+            width: 640px;
+            height:360px;
+            float: left;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        ol{
+            list-style: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .lunbo ol li{
+            width: 10px;
+            height: 10px;
+            float: left;
+            border-radius: 50%;
+            margin-right: 4px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="lunbo">
+    <a class="coin coin-l" href="javascript:;"><</a>
+    <a class="coin coin-r" href="javascript:;">></a>
+    <ul id="pcul">
+        <li><a href="#"><img src="img/1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="img/2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="img/3.jpg" alt=""></a></li>
+        <li><a href="#"><img src="img/4.jpg" alt=""></a></li>
+
+    </ul>
+    <ol>
+
+    </ol>
+</div>
+<script>
+
+
+
+
+</script>
+</body>
+</html>
